@@ -180,6 +180,60 @@ margin: 40px auto;
     flex-direction: column;
     gap: 26px;
   }
+
+/* ===== THEME VARIABLES ===== */
+:root {
+  --bg-color: #000;
+  --text-color: #fff;
+  --muted-text: rgba(255,255,255,0.7);
+  --divider-color: rgba(255,255,255,0.25);
+}
+
+.light-mode {
+  --bg-color: #fff;
+  --text-color: #000;
+  --muted-text: rgba(0,0,0,0.65);
+  --divider-color: rgba(0,0,0,0.25);
+}
+
+/* Apply variables */
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Muted text */
+.job-company,
+.skills-language,
+.job-dates {
+  color: var(--muted-text);
+}
+
+/* Divider lines */
+.section-divider {
+  background: var(--divider-color);
+}
+
+/* Make sure links adapt */
+.contact a {
+  color: var(--text-color);
+}
+
+  #themeToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: 1px solid var(--divider-color);
+  color: var(--text-color);
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border-radius: 6px;
+}
+  
 }  </style>
 </head>
 
@@ -273,7 +327,14 @@ margin: 40px auto;
 </div>  
 </body>
 
+<button id="themeToggle">☀ / 🌙</button>  
 
-  
+  <script>
+  const toggle = document.getElementById("themeToggle");
+
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+  });
+</script>
 </html>
 
