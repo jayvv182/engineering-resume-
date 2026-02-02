@@ -29,3 +29,23 @@
   <h1>Jaethyn Vanvliet</h1>
 </body>
 </html>
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 220px;
+  height: 1px;
+  background: white;
+  margin: 18px auto 0;
+  opacity: 0.7;
+}
